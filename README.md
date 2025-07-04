@@ -54,7 +54,6 @@ HELLO_WORLD="keyboard cat https://www.youtube.com/watch?v=J---aiyznGQ"
 **process.js**
 ```js
 require('env-native').config();
-
 console.log(process.env.HELLO_WORLD); // "keyboard cat https://www.youtube.com/watch?v=J---aiyznGQ"
 ```
 
