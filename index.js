@@ -29,8 +29,8 @@ const parse = (content, { coerce = false, freeze = true } = {}) => {
 	return freeze ? Object.freeze(parsed) : parsed;
 };
 
-const config = ({ path: envPath = '.env', encoding = 'utf8', override = false, coerce = false, freeze = true } = {}) => {
-	const resolved = resolve(process.cwd(), envPath);
+const config = ({ path = '.env', encoding = 'utf8', override = false, coerce = false, freeze = true } = {}) => {
+	const resolved = resolve(process.cwd(), path);
 	if (!existsSync(resolved)) throw new Error(`File not found: ${resolved}`);
 
 	const content = readFileSync(resolved, encoding);
