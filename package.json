@@ -37,6 +37,7 @@
     ".": "./index.js"
   },
   "main": "index.js",
+  "types": "index.d.ts",
   "directories": {
     "example": "example",
     "test": "test"
