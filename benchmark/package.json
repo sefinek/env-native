@@ -6,11 +6,12 @@
   "author": "Sefinek <contact@sefinek.net> (https://sefinek.net)",
   "type": "commonjs",
   "scripts": {
-    "start": "node env-native.js && node dotenv.js",
+    "start": "node env-native.js && node dotenv.js && node dotenvx.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "up": "ncu -u && npm install && npm update && npm audit fix"
   },
   "dependencies": {
+    "@dotenvx/dotenvx": "^1.45.2",
     "dotenv": "^17.0.1"
   }
 }

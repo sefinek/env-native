@@ -18,10 +18,11 @@ Minimalistic, dependency-free `.env` file loader using the native [util.parseEnv
 - **Disk:** KINGSTON SKC3000S1024G (NVM Express 1.4)
 - **OS:** Windows 11 Home
 
-| Module     | Execution Time                 |
-|------------|--------------------------------|
-| env-native | 4.19ms, 4.77ms, 4.45ms, 4.74ms |
-| dotenv     | 6.87ms, 8.04ms, 7.69ms, 8.32ms |
+| Module     | Execution Time                     |
+|------------|------------------------------------|
+| env-native | 4.19ms, 4.77ms, 4.45ms, 4.74ms     |
+| dotenv     | 6.87ms, 8.04ms, 7.69ms, 8.32ms     |
+| dotenvx    | 71.08ms, 67.15ms, 72.06ms, 70.57ms |
 
 ### 🧱 Thin Client
 - **CPU:** AMD GX-420GI
@@ -32,7 +33,7 @@ Minimalistic, dependency-free `.env` file loader using the native [util.parseEnv
 |------------|------------------------------------|
 | env-native | 26.67ms, 24.97ms, 25.35ms, 22.43ms |
 | dotenv     | 42.23ms, 41.22ms, 46.93ms, 41.62ms |
-
+| dotenvx    |                                    |
 
 
 ## 📦 Installation
