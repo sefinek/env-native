@@ -7,7 +7,7 @@
   "type": "commonjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node .\\env-native.js && node .\\dotenv.js",
+    "start": "node env-native.js && node dotenv.js",
     "up": "ncu -u && npm install && npm update && npm audit fix"
   },
   "dependencies": {
