@@ -23,8 +23,6 @@ Minimalistic, dependency-free `.env` file loader using the native [util.parseEnv
 | env-native | 4.19 ms        |
 | dotenv     | 6.87 ms        |
 
----
-
 ### 🧱 Thin Client
 - **CPU:** AMD GX-420GI (4-core, 2.0GHz)
 - **Disk:** WD Red WDS500G1R0B (M.2 SATA)
