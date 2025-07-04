@@ -12,9 +12,15 @@ export const version: string;
  * Options for `config` and `parse` functions
  */
 export interface Options {
-    /** Type coercion: "true" → true, "42" → 42, etc. */
+    /**
+     * Type coercion: "true" → true, "42" → 42, etc.
+     * @default false
+     */
     coerce?: boolean;
-    /** Freezes the result (Object.freeze) */
+    /**
+     * Freezes the result (Object.freeze)
+     * @default true
+     */
     freeze?: boolean;
 }
 
@@ -22,11 +28,20 @@ export interface Options {
  * Additional options for `config` only
  */
 export interface ConfigOptions extends Options {
-    /** Path to the .env file */
+    /**
+     * Path to the .env file
+     * @default ".env"
+     */
     path?: string;
-    /** File encoding */
+    /**
+     * File encoding
+     * @default "utf8"
+     */
     encoding?: BufferEncoding;
-    /** Override existing environment variables */
+    /**
+     * Override existing environment variables
+     * @default false
+     */
     override?: boolean;
 }
 
