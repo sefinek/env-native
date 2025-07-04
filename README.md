@@ -29,11 +29,11 @@ Minimalistic, dependency-free `.env` file loader using the native [util.parseEnv
 - **Disk:** WD Red WDS500G1R0B (M.2 SATA)
 - **OS:** Ubuntu 24.04.2 LTS (Linux 6.8.0-63-generic)
 
-| Module     | Execution Time                     |
-|------------|------------------------------------|
-| env-native | 26.67ms, 24.97ms, 25.35ms, 22.43ms |
-| dotenv     | 42.23ms, 41.22ms, 46.93ms, 41.62ms |
-| dotenvx    |                                    |
+| Module     | Execution Time                         |
+|------------|----------------------------------------|
+| env-native | 26.67ms, 24.97ms, 25.35ms, 22.43ms     |
+| dotenv     | 42.23ms, 41.22ms, 46.93ms, 41.62ms     |
+| dotenvx    | 211.75ms, 208.86ms, 211.20ms, 208.01ms |
 
 
 ## 📦 Installation
