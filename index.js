@@ -1,3 +1,5 @@
+'use strict';
+
 const [major, minor] = process.versions.node.split('.').map(Number);
 if (major < 20 || (major === 20 && minor < 12)) {
 	throw new Error('env-native requires Node.js 20.12.0 or newer');
