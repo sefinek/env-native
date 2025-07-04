@@ -12,7 +12,7 @@ Minimalistic, dependency-free `.env` file loader using the native [util.parseEnv
 - Requires Node.js ≥ **20.12.0**
 
 
-## 🧪 Benchmark Setup (Node.js v22.17.0)
+## 🧪 Benchmark (Node.js v22.17.0)
 ### ⚙️ Workstation
 - **CPU:** AMD Ryzen 9 7945HX
 - **Drive:** KINGSTON SKC3000S1024G (NVM Express 1.4)
