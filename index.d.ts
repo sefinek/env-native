@@ -1,9 +1,4 @@
 /**
- * `env-native` module — a minimal `.env` file loader using built-in `util.parseEnv`.
- * Zero dependencies, supports overriding, freezing, and automatic type coercion.
- */
-
-/**
  * Module version (read from package.json)
  */
 export const version: string;
