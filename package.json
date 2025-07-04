@@ -1,0 +1,61 @@
+{
+  "name": "env-native",
+  "version": "1.0.0",
+  "description": "Minimalistic, dependency-free `.env` file loader using the native util.parseEnv from Node.js.",
+  "keywords": [
+    "env",
+    ".env",
+    "dotenv",
+    "config",
+    "settings",
+    "environment",
+    "variables",
+    "environment-variables",
+    "env-loader",
+    "dotenv-replacement",
+    "util.parseEnv",
+    "native",
+    "nodejs",
+    "zero-dependency",
+    "lightweight",
+    "minimal",
+    "fast",
+    "secure"
+  ],
+  "homepage": "https://github.com/sefinek/env-native#readme",
+  "bugs": {
+    "url": "https://github.com/sefinek/env-native/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sefinek/env-native.git"
+  },
+  "license": "MIT",
+  "author": "Sefinek <contact@sefinek.net> (https://sefinek.net)",
+  "type": "commonjs",
+  "exports": {
+    ".": "./index.js"
+  },
+  "main": "index.js",
+  "directories": {
+    "example": "example",
+    "test": "test"
+  },
+  "files": [
+    "index.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "jest",
+    "up": "ncu -u && npm install && npm update && npm audit fix"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.30.1",
+    "globals": "^16.3.0",
+    "jest": "^30.0.4"
+  },
+  "engines": {
+    "node": ">=20.12.0"
+  }
+}

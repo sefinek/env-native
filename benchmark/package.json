@@ -1,0 +1,16 @@
+{
+  "name": "benchmark",
+  "version": "1.0.0",
+  "description": "",
+  "license": "MIT",
+  "author": "Sefinek <contact@sefinek.net> (https://sefinek.net)",
+  "type": "commonjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node .\\env-native.js && node .\\dotenv.js",
+    "up": "ncu -u && npm install && npm update && npm audit fix"
+  },
+  "dependencies": {
+    "dotenv": "^17.0.1"
+  }
+}
