@@ -26,7 +26,7 @@ Minimalistic, dependency-free `.env` file loader using the native [util.parseEnv
 ### 🧱 Thin Client
 - **CPU:** AMD GX-420GI
 - **Disk:** WD Red WDS500G1R0B (M.2 SATA)
-- **OS:** Ubuntu 24.04.2 LTS (Liunux 6.8.0-63-generic)
+- **OS:** Ubuntu 24.04.2 LTS (Linux 6.8.0-63-generic)
 
 | Module     | Execution Time  |
 |------------|-----------------|
