@@ -35,6 +35,7 @@ Minimalistic, dependency-free `.env` file loader using the native [util.parseEnv
 | dotenv     | 42.23ms, 41.22ms, 46.93ms, 41.62ms     |
 | dotenvx    | 211.75ms, 208.86ms, 211.20ms, 208.01ms |
 
+> `env-native` is fast, clean, and native — with no logs, no overhead, and even up to 10× faster than `dotenvx`. The `dotenvx` module was created by the same author as `dotenv`.
 
 ## 📦 Installation
 ```bash
