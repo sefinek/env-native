@@ -1,7 +1,6 @@
 {
-  "name": "benchmark",
+  "name": "env-benchmark",
   "version": "1.0.0",
-  "description": "",
   "license": "MIT",
   "author": "Sefinek <contact@sefinek.net> (https://sefinek.net)",
   "type": "commonjs",

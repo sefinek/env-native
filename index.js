@@ -1,11 +1,6 @@
 'use strict';
 
-const [major, minor] = process.versions.node.split('.').map(Number);
-if (major < 20 || (major === 20 && minor < 12)) {
-	throw new Error('env-native requires Node.js 20.12.0 or newer');
-}
-
-const { existsSync, readFileSync } = require('node:fs');
+const { readFileSync } = require('node:fs');
 const { resolve } = require('node:path');
 const { parseEnv } = require('node:util');
 const { version } = require('./package.json');
@@ -14,15 +9,16 @@ const coerceValue = v => {
 	if (!v.trim()) return v;
 	if (v === 'true') return true;
 	if (v === 'false') return false;
-	const num = Number(v);
-	return Number.isNaN(num) ? v : num;
+	const n = +v;
+	return String(n) === v ? n : v;
 };
 
 const parse = (content, { coerce = false, freeze = true } = {}) => {
 	const raw = parseEnv(content);
 	const parsed = {};
 
-	for (const [k, v] of Object.entries(raw)) {
+	for (const k in raw) {
+		const v = raw[k];
 		parsed[k] = coerce ? coerceValue(v) : v;
 	}
 
@@ -31,16 +27,20 @@ const parse = (content, { coerce = false, freeze = true } = {}) => {
 
 const config = ({ path = '.env', encoding = 'utf8', override = false, coerce = false, freeze = true } = {}) => {
 	const resolved = resolve(process.cwd(), path);
-	if (!existsSync(resolved)) throw new Error(`File not found: ${resolved}`);
 
-	const content = readFileSync(resolved, encoding);
+	let content;
+	try {
+		content = readFileSync(resolved, encoding);
+	} catch (err) {
+		throw new Error(err.message);
+	}
+
 	const parsed = parse(content, { coerce, freeze });
-
 	const injected = {};
-	for (const [k, v] of Object.entries(parsed)) {
+	for (const k in parsed) {
 		if (override || !(k in process.env)) {
-			process.env[k] = String(v);
-			injected[k] = v;
+			process.env[k] = parsed[k];
+			injected[k] = parsed[k];
 		}
 	}
 
