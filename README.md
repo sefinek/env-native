@@ -13,15 +13,6 @@ Minimalistic, dependency-free `.env` file loader using the native [util.parseEnv
 
 
 ## 🧪 Benchmark (Node.js v22.17.0)
-### ⚙️ Workstation
-- **CPU:** AMD Ryzen 9 7945HX
-- **Disk:** KINGSTON SKC3000S1024G (NVM Express 1.4)
-- **OS:** Windows 11 Home
-
-### 🧱 Thin Client
-- **CPU:** AMD GX-420GI
-- **Disk:** WD Red WDS500G1R0B (M.2 SATA)
-- **OS:** Ubuntu 24.04.2 LTS (Linux 6.8.0-63-generic)
 
 | Module     | Package Size | Workstation (ms)                  | Thin Client (ms)                       |
 |------------|--------------|-----------------------------------|----------------------------------------|
@@ -31,6 +22,16 @@ Minimalistic, dependency-free `.env` file loader using the native [util.parseEnv
 
 `env-native` is fast, clean, and native — with no logs, no overhead, and even up to 10× faster than `dotenvx`.
 The `dotenvx` module was created by the same author as `dotenv`.
+
+### ⚙️ Workstation
+- **CPU:** AMD Ryzen 9 7945HX
+- **Disk:** KINGSTON SKC3000S1024G (NVM Express 1.4)
+- **OS:** Windows 11 Home
+
+### 🧱 Thin Client
+- **CPU:** AMD GX-420GI
+- **Disk:** WD Red WDS500G1R0B (M.2 SATA)
+- **OS:** Ubuntu 24.04.2 LTS (Linux 6.8.0-63-generic)
 
 
 ## 📦 Installation
