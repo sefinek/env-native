@@ -12,6 +12,14 @@ Minimalistic, dependency-free `.env` file loader using the native [util.parseEnv
 - Requires Node.js ≥ **20.12.0**
 
 
+## 📦 Installation
+```bash
+npm install env-native
+```
+
+> Make sure you're using Node.js version `20.12.0` or newer.
+
+
 ## 🧪 Benchmark (Node.js v22.17.0)
 
 | Module     | Package Size | Workstation (ms)                  | Thin Client (ms)                       |
@@ -33,14 +41,6 @@ The `dotenvx` module was created by the same author as `dotenv`.
 - **CPU:** AMD GX-420GI
 - **Disk:** WD Red WDS500G1R0B (M.2 SATA)
 - **OS:** Ubuntu 24.04.2 LTS (Linux 6.8.0-63-generic)
-
-
-## 📦 Installation
-```bash
-npm install env-native
-```
-
-> Make sure you're using Node.js version `20.12.0` or newer.
 
 
 ## 🧪 Example
