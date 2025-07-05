@@ -18,24 +18,19 @@ Minimalistic, dependency-free `.env` file loader using the native [util.parseEnv
 - **Disk:** KINGSTON SKC3000S1024G (NVM Express 1.4)
 - **OS:** Windows 11 Home
 
-| Module     | Execution Time                     |
-|------------|------------------------------------|
-| env-native | 4.19ms, 4.77ms, 4.45ms, 4.74ms     |
-| dotenv     | 6.87ms, 8.04ms, 7.69ms, 8.32ms     |
-| dotenvx    | 71.08ms, 67.15ms, 72.06ms, 70.57ms |
-
 ### 🧱 Thin Client
 - **CPU:** AMD GX-420GI
 - **Disk:** WD Red WDS500G1R0B (M.2 SATA)
 - **OS:** Ubuntu 24.04.2 LTS (Linux 6.8.0-63-generic)
 
-| Module     | Execution Time                         |
-|------------|----------------------------------------|
-| env-native | 26.67ms, 24.97ms, 25.35ms, 22.43ms     |
-| dotenv     | 42.23ms, 41.22ms, 46.93ms, 41.62ms     |
-| dotenvx    | 211.75ms, 208.86ms, 211.20ms, 208.01ms |
+| Module     | Package Size | Workstation (ms)                  | Thin Client (ms)                       |
+|------------|--------------|-----------------------------------|----------------------------------------|
+| env-native | 8 KB         | 4.19, 4.77, 4.45, 4.74            | 26.67, 24.97, 25.35, 22.43             |
+| dotenv     | 76 KB        | 6.87, 8.04, 7.69, 8.32            | 42.23, 41.22, 46.93, 41.62             |
+| dotenvx    | 280 KB       | 71.08, 67.15, 72.06, 70.57        | 211.75, 208.86, 211.20, 208.01         |
 
 > `env-native` is fast, clean, and native — with no logs, no overhead, and even up to 10× faster than `dotenvx`. The `dotenvx` module was created by the same author as `dotenv`.
+
 
 ## 📦 Installation
 ```bash
