@@ -26,18 +26,20 @@ const parse = (content, { coerce = false, freeze = true } = {}) => {
 };
 
 const config = ({ path = '.env', encoding = 'utf8', override = false } = {}) => {
-	const resolved = resolve(process.cwd(), path);
+	const paths = Array.isArray(path) ? path : [path];
 
-	let content;
-	try {
-		content = readFileSync(resolved, encoding);
-	} catch (err) {
-		throw new Error(err.message);
-	}
+	for (const p of paths) {
+		let content;
+		try {
+			content = readFileSync(resolve(process.cwd(), p), encoding);
+		} catch (err) {
+			throw new Error(err.message);
+		}
 
-	const parsed = parse(content);
-	for (const k in parsed) {
-		if (override || !(k in process.env)) process.env[k] = parsed[k];
+		const parsed = parse(content);
+		for (const k in parsed) {
+			if (override || !(k in process.env)) process.env[k] = String(parsed[k]);
+		}
 	}
 };
 
