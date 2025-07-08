@@ -1,20 +1,28 @@
-# env-native
+# 📄 env-native
 Minimalistic, dependency-free `.env` file loader using the native [util.parseEnv](https://nodejs.org/api/util.html#utilparseenvcontent) from Node.js.
+Significantly faster and lighter than `dotenv`.
 
 
 ## 🚀 Features
 - Zero dependencies
 - Fast and lightweight
 - Doesn't [promote anything](https://github.com/motdotla/dotenv/issues/876) or spam logs, unlike dotenv
-- Uses built-in `node:util.parseEnv`
+- Uses built-in `util.parseEnv`
 - Simple API: `config(options)` or `parse(content, options)`
 - Supports custom paths and overrides
 - Requires Node.js ≥ **20.12.0**
 
 
 ## 📦 Installation
+
+### npm
 ```bash
 npm install env-native
+```
+
+### yarn
+```bash
+yarn add env-native
 ```
 
 > Make sure you're using Node.js version `20.12.0` or newer.
@@ -46,13 +54,13 @@ The `dotenvx` module was created by the same author as `dotenv`.
 ## 🧪 Example
 **.env**
 ```env
-HELLO_WORLD="keyboard cat https://www.youtube.com/watch?v=J---aiyznGQ"
+HELLO_WORLD="Keyboard cat memes make your day better! https://youtu.be/J---aiyznGQ"
 ```
 
 **process.js**
 ```js
 require('env-native').config();
-console.log(process.env.HELLO_WORLD); // "keyboard cat https://www.youtube.com/watch?v=J---aiyznGQ"
+console.log(process.env.HELLO_WORLD); // Keyboard cat memes make your day better! https://youtu.be/J---aiyznGQ
 ```
 
 
@@ -61,35 +69,20 @@ console.log(process.env.HELLO_WORLD); // "keyboard cat https://www.youtube.com/w
 Loads a `.env` file and injects its variables into `process.env`.
 
 #### Parameters
-| Option     | Type      | Default | Description                                             |
-|------------|-----------|---------|---------------------------------------------------------|
-| `path`     | `string`  | `.env`  | Path to your `.env` file                                |
-| `encoding` | `string`  | `utf8`  | File encoding                                           |
-| `override` | `boolean` | `false` | Overwrite existing `process.env` variables              |
-| `coerce`   | `boolean` | `false` | Coerce values: `"true"` → `true`, `"42"` → `42`, etc.   |
-| `freeze`   | `boolean` | `true`  | Freeze `parsed` and `injected` objects (make immutable) |
+| Option     | Type      | Default | Description                                 |
+|------------|-----------|---------|---------------------------------------------|
+| `path`     | `string`  | `.env`  | Path to your `.env` file                    |
+| `encoding` | `string`  | `utf8`  | File encoding                               |
+| `override` | `boolean` | `false` | Overwrite existing `process.env` variables  |
 
-> **Note:** `process.env` always stores values as strings. Even with `coerce: true`, the injected variables in `process.env` remain stringified. Coercion only affects the returned `parsed` and `injected` objects.
+> **Note:** All injected variables are always stored as strings in `process.env`.
 
 #### Returns
-```ts
-{
-  parsed: Record<string, string>,   // all parsed variables
-  injected: Record<string, string>  // only the ones actually injected
-}
-```
+Nothing.
 
 #### Example with options
 ```js
-const { config } = require('env-native');
-
-const result = config({
-  path: './config/.env.dev',
-  override: true,
-  coerce: true
-});
-
-console.log(result.injected); // only variables injected into process.env
+require('env-native').config({ path: './config/.env', override: true });
 ```
 
 ### `parse(content: string, options?)`

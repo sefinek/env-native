@@ -25,7 +25,7 @@ const parse = (content, { coerce = false, freeze = true } = {}) => {
 	return freeze ? Object.freeze(parsed) : parsed;
 };
 
-const config = ({ path = '.env', encoding = 'utf8', override = false, coerce = false, freeze = true } = {}) => {
+const config = ({ path = '.env', encoding = 'utf8', override = false } = {}) => {
 	const resolved = resolve(process.cwd(), path);
 
 	let content;
@@ -35,16 +35,10 @@ const config = ({ path = '.env', encoding = 'utf8', override = false, coerce = f
 		throw new Error(err.message);
 	}
 
-	const parsed = parse(content, { coerce, freeze });
-	const injected = {};
+	const parsed = parse(content);
 	for (const k in parsed) {
-		if (override || !(k in process.env)) {
-			process.env[k] = parsed[k];
-			injected[k] = parsed[k];
-		}
+		if (override || !(k in process.env)) process.env[k] = parsed[k];
 	}
-
-	return { parsed, injected };
 };
 
 module.exports = { config, parse, version };
