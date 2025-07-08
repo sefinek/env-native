@@ -1,7 +1,7 @@
 {
   "name": "env-native",
   "version": "1.0.2",
-  "description": "Minimalistic, dependency-free .env file loader using the native util.parseEnv from Node.js.",
+  "description": "Minimalistic, dependency-free .env file loader using the native util.parseEnv function from Node.js. Much faster than dotenv.",
   "keywords": [
     "env",
     ".env",
