@@ -1,9 +1,7 @@
-'use strict';
-
-const { readFileSync } = require('node:fs');
-const { resolve } = require('node:path');
-const { parseEnv } = require('node:util');
-const { version } = require('./package.json');
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+import { parseEnv } from 'node:util';
+import pkg from './package.json' with { type: 'json' };
 
 const coerceValue = v => {
 	if (!v.trim()) return v;
@@ -13,7 +11,7 @@ const coerceValue = v => {
 	return String(n) === v ? n : v;
 };
 
-const parse = (content, { coerce = false, freeze = true } = {}) => {
+export const parse = (content, { coerce = false, freeze = true } = {}) => {
 	const raw = parseEnv(content);
 	const parsed = {};
 
@@ -25,7 +23,7 @@ const parse = (content, { coerce = false, freeze = true } = {}) => {
 	return freeze ? Object.freeze(parsed) : parsed;
 };
 
-const config = ({ path = '.env', encoding = 'utf8', override = false } = {}) => {
+export const config = ({ path = '.env', encoding = 'utf8', override = false } = {}) => {
 	const paths = Array.isArray(path) ? path : [path];
 
 	for (const p of paths) {
@@ -43,4 +41,4 @@ const config = ({ path = '.env', encoding = 'utf8', override = false } = {}) => 
 	}
 };
 
-module.exports = { config, parse, version };
+export const version = pkg.version;

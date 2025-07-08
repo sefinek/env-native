@@ -36,7 +36,7 @@
   },
   "license": "MIT",
   "author": "Sefinek <contact@sefinek.net> (https://sefinek.net)",
-  "type": "commonjs",
+  "type": "module",
   "exports": {
     ".": "./index.js"
   },
@@ -53,11 +53,12 @@
     "LICENSE"
   ],
   "scripts": {
-    "test": "jest",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "up": "ncu -u && npm install && npm update && npm audit fix"
   },
   "devDependencies": {
     "@eslint/js": "^9.30.1",
+    "@jest/globals": "^30.0.4",
     "globals": "^16.3.0",
     "jest": "^30.0.4"
   },

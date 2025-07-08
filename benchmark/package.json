@@ -7,7 +7,7 @@
   },
   "license": "MIT",
   "author": "Sefinek <contact@sefinek.net> (https://sefinek.net)",
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
     "start": "node env-native.js && node dotenv.js && node dotenvx.js",
     "test": "echo \"Error: no test specified\" && exit 1",

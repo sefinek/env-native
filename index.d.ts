@@ -1,10 +1,11 @@
 /**
- * Module version (read from package.json)
+ * Module version (read from package.json).
+ * @example 1.0.0
  */
 export const version: string;
 
 /**
- * Options for `config` and `parse` functions
+ * Options for `parse` function.
  */
 export interface Options {
     /**
@@ -20,41 +21,31 @@ export interface Options {
 }
 
 /**
- * Additional options for `config` only
+ * Additional options for `config` only.
  */
 export interface ConfigOptions extends Options {
     /**
-     * Path to the .env file
+     * Path(s) to the .env file(s). Single path as string or multiple as array of strings.
      * @default ".env"
      */
-    path?: string;
+    path?: string | string[];
     /**
      * File encoding
      * @default "utf8"
      */
     encoding?: BufferEncoding;
     /**
-     * Override existing environment variables
+     * Override existing environment variables.
      * @default false
      */
     override?: boolean;
 }
 
 /**
- * Result of `config` execution
- */
-export interface ConfigResult {
-    /** All parsed variables */
-    parsed: Record<string, string | number | boolean>;
-    /** Only variables actually injected into process.env */
-    injected: Record<string, string | number | boolean>;
-}
-
-/**
- * Parses `.env` content without modifying process.env
+ * Parses `.env` content without modifying process.env.
  * @param content The .env file content as a string
  * @param options Parsing options
- * @returns Object with processed variables
+ * @returns Object with processed variables (string, number, or boolean)
  */
 export function parse(
     content: string,
@@ -62,8 +53,8 @@ export function parse(
 ): Record<string, string | number | boolean>;
 
 /**
- * Loads a `.env` file and injects variables into `process.env`
+ * Loads one or multiple `.env` files and injects variables into `process.env`.
  * @param options Optional configuration settings
- * @returns Object with all and injected variables
+ * @returns Nothing (void)
  */
-export function config(options?: ConfigOptions): ConfigResult;
+export function config(options?: ConfigOptions): void;

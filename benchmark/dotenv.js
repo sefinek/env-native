@@ -1,6 +1,8 @@
 console.time('execution');
 
-require('dotenv').config();
+import dotenv from 'dotenv';
+dotenv.config();
+
 console.log(process.env.HELLO);
 
 console.timeEnd('execution');
