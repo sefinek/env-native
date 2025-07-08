@@ -1,6 +1,6 @@
 {
   "name": "env-native",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Minimalistic, dependency-free .env file loader using the native util.parseEnv from Node.js.",
   "keywords": [
     "env",
@@ -29,6 +29,10 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sefinek/env-native.git"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://sefinek.net/donate"
   },
   "license": "MIT",
   "author": "Sefinek <contact@sefinek.net> (https://sefinek.net)",
