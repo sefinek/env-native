@@ -4,13 +4,13 @@ Significantly faster and smaller than `dotenv` and `dotenvx`.
 Designed for performance-critical, production-grade use cases in demanding environments.
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/env-native"><img src="https://img.shields.io/npm/v/env-native?color=blue&label=npm&style=flat-square" alt="npm version"></a>
-  <a href="https://www.npmjs.com/package/env-native"><img src="https://img.shields.io/npm/dm/env-native?style=flat-square&label=downloads" alt="npm downloads"></a>
+  <a href="https://www.npmjs.com/package/env-native"><img src="https://img.shields.io/npm/v/env-native?color=blue&label=npm" alt="npm version"></a>
+  <a href="https://www.npmjs.com/package/env-native"><img src="https://img.shields.io/npm/dm/env-native?label=downloads" alt="npm downloads"></a>
   <a href="https://packagephobia.com/result?p=env-native"><img src="https://packagephobia.com/badge?p=env-native" alt="Install size"></a>
-  <a href="https://bundlephobia.com/package/env-native"><img src="https://img.shields.io/bundlephobia/min/env-native?style=flat-square&label=min+size" alt="Minified size"></a>
-  <a href="https://github.com/sefinek/env-native/actions/workflows/node.js.yml"><img src="https://img.shields.io/github/actions/workflow/status/sefinek/env-native/node.js.yml?branch=main&style=flat-square" alt="Build status"></a>
-  <a href="https://nodejs.org/en"><img src="https://img.shields.io/node/v/env-native?style=flat-square" alt="Node.js version"></a>
-  <a href="https://github.com/sefinek/env-native/blob/main/LICENSE"><img src="https://img.shields.io/npm/l/env-native?color=brightgreen&style=flat-square" alt="License MIT"></a>
+  <a href="https://bundlephobia.com/package/env-native"><img src="https://img.shields.io/bundlephobia/min/env-native?label=min+size" alt="Minified size"></a>
+  <a href="https://github.com/sefinek/env-native/actions/workflows/node.js.yml"><img src="https://img.shields.io/github/actions/workflow/status/sefinek/env-native/node.js.yml?branch=main" alt="Build status"></a>
+  <a href="https://nodejs.org/en"><img src="https://img.shields.io/node/v/env-native" alt="Node.js version"></a>
+  <a href="https://github.com/sefinek/env-native/blob/main/LICENSE"><img src="https://img.shields.io/npm/l/env-native?color=brightgreen" alt="License MIT"></a>
 </p>
 
 
