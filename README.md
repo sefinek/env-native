@@ -17,7 +17,7 @@ Designed for performance-critical, production-grade use cases in demanding envir
 ## 🚀 Features
 - Zero dependencies
 - Fast and lightweight
-- Just 8 KB in size
+- Just 9 KB in size
 - Uses built-in `util.parseEnv`
 - Simple API: `config(options)` or `parse(content, options)`
 - Supports custom file paths and variable overrides
