@@ -1,7 +1,9 @@
-@echo off
+#!/bin/bash
+
 node env-native
 echo --------------------------------------------
-node dotenv\dotenv.js
+
+node dotenv/dotenv.js
 echo --------------------------------------------
-node dotenv\dotenvx.js
-exit
+
+node dotenv/dotenvx.js
