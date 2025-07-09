@@ -11,7 +11,7 @@ const coerceValue = v => {
 	return String(n) === v ? n : v;
 };
 
-export const parse = (content, { coerce = false, freeze = true } = {}) => {
+export const parse = (content, { coerce = true, freeze = true } = {}) => {
 	const raw = parseEnv(content);
 	const parsed = {};
 
@@ -34,7 +34,7 @@ export const config = ({ path = '.env', encoding = 'utf8', override = false } = 
 			throw new Error(err.message);
 		}
 
-		const parsed = parse(content);
+		const parsed = parse(content, { coerce: false, freeze: false });
 		for (const k in parsed) {
 			if (override || !(k in process.env)) process.env[k] = String(parsed[k]);
 		}

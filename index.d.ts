@@ -1,6 +1,5 @@
 /**
  * Module version (read from package.json).
- * @example 1.0.0
  */
 export const version: string;
 
@@ -10,7 +9,7 @@ export const version: string;
 export interface Options {
     /**
      * Type coercion: "true" → true, "42" → 42, etc.
-     * @default false
+     * @default true
      */
     coerce?: boolean;
     /**
@@ -55,6 +54,6 @@ export function parse(
 /**
  * Loads one or multiple `.env` files and injects variables into `process.env`.
  * @param options Optional configuration settings
- * @returns Nothing (void)
+ * @returns void
  */
 export function config(options?: ConfigOptions): void;
