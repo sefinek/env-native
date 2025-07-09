@@ -1,7 +1,7 @@
 console.time('execution');
 
-import { config } from '../index.js';
-config();
+const dotenv = require('dotenv');
+dotenv.config();
 
 console.log(process.env.HELLO);
 

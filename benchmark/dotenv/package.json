@@ -1,11 +1,10 @@
 {
-  "name": "env-benchmark",
+  "name": "dotenv",
   "version": "1.0.0",
   "license": "MIT",
   "author": "Sefinek <contact@sefinek.net> (https://sefinek.net)",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
-    "start": "node env-native.js && node dotenv.js && node dotenvx.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "up": "ncu -u && npm install && npm update && npm audit fix"
   },

@@ -1,6 +1,6 @@
 console.time('execution');
 
-import { config } from '@dotenvx/dotenvx';
+import { config } from '../../index.js';
 config();
 
 console.log(process.env.HELLO);

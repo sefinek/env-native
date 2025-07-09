@@ -1,7 +1,7 @@
 console.time('execution');
 
-import dotenv from 'dotenv';
-dotenv.config();
+const { config } = require('@dotenvx/dotenvx');
+config();
 
 console.log(process.env.HELLO);
 
