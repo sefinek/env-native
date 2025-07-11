@@ -24,9 +24,7 @@ export const parse = (content, { coerce = true, freeze = true } = {}) => {
 };
 
 export const config = ({ path = '.env', encoding = 'utf8', override = false } = {}) => {
-	const paths = Array.isArray(path) ? path : [path];
-
-	for (const p of paths) {
+	for (const p of Array.isArray(path) ? path : [path]) {
 		let content;
 		try {
 			content = readFileSync(resolve(process.cwd(), p), encoding);

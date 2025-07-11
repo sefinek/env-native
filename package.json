@@ -38,10 +38,18 @@
   "author": "Sefinek <contact@sefinek.net> (https://sefinek.net)",
   "type": "module",
   "exports": {
-    ".": "./index.js"
+    ".": {
+      "types": "./index.d.ts",
+      "require": "./index.js",
+      "default": "./index.js"
+    }
   },
   "main": "index.js",
   "types": "index.d.ts",
+  "bin": {
+    "env-native": "cli.js",
+    "enative": "cli.js"
+  },
   "directories": {
     "example": "example",
     "test": "test"
