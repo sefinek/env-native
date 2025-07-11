@@ -9,7 +9,7 @@
     "up": "ncu -u && npm install && npm update && npm audit fix"
   },
   "dependencies": {
-    "@dotenvx/dotenvx": "^1.47.1",
-    "dotenv": "^17.1.0"
+    "@dotenvx/dotenvx": "^1.47.3",
+    "dotenv": "^17.2.0"
   }
 }
