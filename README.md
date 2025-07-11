@@ -2,6 +2,7 @@
 Minimalistic, zero-dependency `.env` loader powered by Node.js's native [util.parseEnv](https://nodejs.org/api/util.html#utilparseenvcontent).
 Significantly faster and smaller than `dotenv` and `dotenvx`.
 Designed for performance-critical, production-grade use cases in demanding environments.
+If you like this module, please star [the repository on GitHub](https://github.com/sefinek/env-native). Thank you!
 
 <p align="center">
   <a href="https://www.npmjs.com/package/env-native"><img src="https://img.shields.io/npm/v/env-native?color=blue&label=npm" alt="npm version"></a>
