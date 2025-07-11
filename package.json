@@ -1,7 +1,7 @@
 {
   "name": "env-native",
-  "version": "1.0.2",
-  "description": "Minimalistic, dependency-free .env file loader using the native util.parseEnv function from Node.js. Much faster than dotenv.",
+  "version": "1.1.0",
+  "description": "Minimalistic, dependency-free .env file loader using the native util.parseEnv function from Node.js. Much faster than dotenv. Also supports CLI.",
   "keywords": [
     "env",
     ".env",
@@ -20,7 +20,9 @@
     "lightweight",
     "minimal",
     "fast",
-    "secure"
+    "secure",
+    "env cli",
+    "cli"
   ],
   "homepage": "https://github.com/sefinek/env-native#readme",
   "bugs": {
@@ -47,8 +49,8 @@
   "main": "index.js",
   "types": "index.d.ts",
   "bin": {
-    "env-native": "cli.js",
-    "enative": "cli.js"
+    "enative": "cli.js",
+    "env-native": "cli.js"
   },
   "directories": {
     "example": "example",

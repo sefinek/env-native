@@ -16,12 +16,12 @@ If you like this module, please star [the repository on GitHub](https://github.c
 
 ## 🚀 Features
 - Zero dependencies
-- Fast and lightweight
-- Just 9 KB in size
+- Fast and lightweight (just 9 KB)
 - Uses built-in `util.parseEnv`
 - Simple API: `config(options)` or `parse(content, options)`
 - Supports custom file paths and variable overrides
-- Supports both ESM and CJS
+- Supports CLI
+- ESM and CJS support
 - No [self-promotion](https://github.com/motdotla/dotenv/issues/876) or console spam, unlike dotenv
 - Requires Node.js ≥ **20.12.0**
 
@@ -121,6 +121,35 @@ const raw = readFileSync('./config/.my-env-file', 'utf8');
 const parsed = parse(raw, { coerce: true, freeze: true });
 
 console.log(parsed);
+```
+
+
+## 🖥️ CLI Usage
+```bash
+env-native [--env <file>] [--coerce|--no-coerce] [--freeze|--no-freeze] [--cmd <command> [args...]]
+enative [--env <file>] [--coerce|--no-coerce] [--freeze|--no-freeze]
+```
+
+> The CLI is available as both `env-native` and `enative` (alias).
+
+### Options
+| Flag              | Alias | Default | Description                                |
+|-------------------|-------|---------|--------------------------------------------|
+| `--env <file>`    | `-e`  | `.env`  | Path to `.env` file                        |
+| `--cmd <command>` | `-c`  | –       | Command to execute with loaded environment |
+| `--coerce`        |       | `true`  | Auto-convert numbers and booleans          |
+| `--no-coerce`     |       | –       | Disable auto-convert                       |
+| `--freeze`        |       | `true`  | Freeze parsed object                       |
+| `--no-freeze`     |       | –       | Disable freezing                           |
+| `--help`          | `-h`  | –       | Show help message                          |
+| `--version`       | `-v`  | –       | Print version                              |
+
+### Examples
+```bash
+env-native --env .env
+env-native --env .env --no-coerce --no-freeze
+env-native --env .env --cmd node app.js
+env-native -e .env -c node app.js
 ```
 
 
