@@ -7,7 +7,6 @@ Designed for performance-critical, production-grade use cases in demanding envir
   <a href="https://www.npmjs.com/package/env-native"><img src="https://img.shields.io/npm/v/env-native?color=blue&label=npm" alt="npm version"></a>
   <a href="https://www.npmjs.com/package/env-native"><img src="https://img.shields.io/npm/dm/env-native?label=downloads" alt="npm downloads"></a>
   <a href="https://packagephobia.com/result?p=env-native"><img src="https://packagephobia.com/badge?p=env-native" alt="Install size"></a>
-  <a href="https://bundlephobia.com/package/env-native"><img src="https://img.shields.io/bundlephobia/min/env-native?label=min+size" alt="Minified size"></a>
   <a href="https://github.com/sefinek/env-native/actions/workflows/node.js.yml"><img src="https://img.shields.io/github/actions/workflow/status/sefinek/env-native/node.js.yml?branch=main" alt="Build status"></a>
   <a href="https://nodejs.org/en"><img src="https://img.shields.io/node/v/env-native" alt="Node.js version"></a>
   <a href="https://github.com/sefinek/env-native/blob/main/LICENSE"><img src="https://img.shields.io/npm/l/env-native?color=brightgreen" alt="License MIT"></a>
@@ -67,13 +66,13 @@ yarn add env-native
 ## 🧪 Example
 **.env**
 ```env
-HELLO_WORLD="Keyboard cat memes make your day better! https://youtu.be/J---aiyznGQ"
+HELLO_WORLD="Keyboard cat! https://youtu.be/J---aiyznGQ"
 ```
 
 **process.js**
 ```js
 require('env-native').config();
-console.log(process.env.HELLO_WORLD); // Keyboard cat memes make your day better! https://youtu.be/J---aiyznGQ
+console.log(process.env.HELLO_WORLD); // Keyboard cat! https://youtu.be/J---aiyznGQ
 ```
 
 
