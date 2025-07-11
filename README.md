@@ -42,11 +42,11 @@ yarn add env-native
 
 ## 🧪 Benchmark (Node.js v22.17.0)
 
-| Module           | Package Size | Workstation (ms)              | Thin Client (ms)                   |
-|------------------|--------------|-------------------------------|------------------------------------|
-| env-native (ESM) | ~ 9 KB       | 0.793, 0.789, 0.782, 0.766    | 2.552, 2.971, 2.743, 2.516         |
-| dotenv (CJS)     | ~ 79 KB      | 7.712, 8.067, 8.1, 8.613      | 37.409, 40.966, 37.919, 35.935     |
-| dotenvx (CJS)    | ~ 293 KB     | 71.363, 71.766, 70.93, 70.828 | 252.899, 248.658, 249.393, 269.038 |
+| Module           | Package Size | Workstation (ms)                | Thin Client (ms)                   |
+|------------------|--------------|---------------------------------|------------------------------------|
+| env-native (ESM) | ~ 9 KB       | 0.793, 0.789, 0.782, 0.766      | 2.552, 2.971, 2.743, 2.516         |
+| dotenv (CJS)     | ~ 79 KB      | 7.712, 8.067, 8.1, 8.613        | 37.409, 40.966, 37.919, 35.935     |
+| dotenvx (CJS)    | ~ 293 KB     | 74.016, 103.601, 78.338, 75.081 | 252.899, 248.658, 249.393, 269.038 |
 
 `env-native` is fast, clean, and native — with no logs, no overhead, and up to **90× faster** than `dotenvx` on weaker systems.
 `dotenvx` is maintained by the same author as `dotenv`.
