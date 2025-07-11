@@ -55,7 +55,7 @@ yarn add env-native
 #### Workstation
 - **CPU:** AMD Ryzen 9 7945HX
 - **Disk:** KINGSTON SKC3000S1024G (NVM Express 1.4)
-- **OS:** Windows 11 Home
+- **OS:** Windows 11 Home 24H2
 
 #### Thin Client
 - **CPU:** AMD GX-420GI
