@@ -12,5 +12,5 @@ const parsed = parse(content, { coerce: true });
 
 console.log('🧪 Parsed (typed values):');
 for (const [key, value] of Object.entries(parsed)) {
-        console.log(`- ${key}:`, value, `(${typeof value})`);
+	console.log(`- ${key}:`, value, `(${typeof value})`);
 }
