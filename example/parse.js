@@ -7,7 +7,6 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const ENV_PATH = path.resolve(__dirname, '.env');
 const content = fs.readFileSync(ENV_PATH, 'utf8');
-
 const parsed = parse(content, { coerce: true });
 
 console.log('🧪 Parsed (typed values):');
