@@ -7,16 +7,15 @@ const coerceValue = v => {
 	if (!v.trim()) return v;
 	if (v === 'true') return true;
 	if (v === 'false') return false;
-	const n = +v;
-	return String(n) === v ? n : v;
+	const n = Number(v);
+	return !Number.isNaN(n) && String(n) === v ? n : v;
 };
 
 export const parse = (content, { coerce = true, freeze = true } = {}) => {
 	const raw = parseEnv(content);
 	const parsed = {};
 
-	for (const k in raw) {
-		const v = raw[k];
+	for (const [k, v] of Object.entries(raw)) {
 		parsed[k] = coerce ? coerceValue(v) : v;
 	}
 
@@ -24,17 +23,19 @@ export const parse = (content, { coerce = true, freeze = true } = {}) => {
 };
 
 export const config = ({ path = '.env', encoding = 'utf8', override = false } = {}) => {
+	const cwd = process.cwd();
+
 	for (const p of Array.isArray(path) ? path : [path]) {
 		let content;
 		try {
-			content = readFileSync(resolve(process.cwd(), p), encoding);
+			content = readFileSync(resolve(cwd, p), encoding);
 		} catch (err) {
 			throw new Error(err.message);
 		}
 
 		const parsed = parse(content, { coerce: false, freeze: false });
-		for (const k in parsed) {
-			if (override || !(k in process.env)) process.env[k] = String(parsed[k]);
+		for (const [k, v] of Object.entries(parsed)) {
+			if (override || !(k in process.env)) process.env[k] = String(v);
 		}
 	}
 };

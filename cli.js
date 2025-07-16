@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { readFileSync } from 'node:fs';
 import { spawn } from 'node:child_process';
+import { resolve } from 'node:path';
 import { config, parse, version } from './index.js';
 import { parseArgs } from 'node:util';
 
@@ -47,13 +48,8 @@ if (values.help) {
 	process.exit(0);
 }
 
-const envPath = values.env;
-let cmdArr;
-if (values.cmd) {
-	cmdArr = [values.cmd, ...positionals];
-} else {
-	cmdArr = positionals;
-}
+const envPath = resolve(process.cwd(), values.env);
+const cmdArr = values.cmd ? [values.cmd, ...positionals] : positionals;
 
 if (!cmdArr.length) {
 	try {
@@ -83,3 +79,4 @@ proc.on('error', err => {
 	process.stderr.write(`Error executing command: ${err.message}\n`);
 	process.exit(1);
 });
+
