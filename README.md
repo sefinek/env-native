@@ -154,4 +154,5 @@ env-native -e .env -c node app.js
 
 
 ## 🔒 License
-Copyright 2025 © by [Sefinek](https://sefinek.net). All rights reserved.
+Copyright 2025 © [Sefinek](https://sefinek.net).
+Licensed under the [MIT License](LICENSE).
