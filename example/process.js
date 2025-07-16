@@ -1,6 +1,7 @@
 console.time('execution');
 
-require('../index.js').config();
+import { config } from '../index.js';
+config({ path: './example/.env' });
 
 const msg = process.env.GREETING;
 console.log('process.env.GREETING:', msg);

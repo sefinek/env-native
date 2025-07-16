@@ -1,3 +1,3 @@
-const { version } = require('../index.js');
+import { version } from '../index.js';
 
 console.log('Version:', version);

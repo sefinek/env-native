@@ -1,10 +1,12 @@
-const fs = require('node:fs');
-const path = require('node:path');
-const { parse } = require('../index.js');
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { parse } from '../index.js';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const ENV_PATH = path.resolve(__dirname, '.env');
 const content = fs.readFileSync(ENV_PATH, 'utf8');
-
 const parsed = parse(content, { coerce: true });
 
 console.log('🧪 Parsed (typed values):');
