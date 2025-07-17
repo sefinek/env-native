@@ -53,7 +53,7 @@
     "env-native": "cli.js"
   },
   "directories": {
-    "example": "example",
+    "example": "examples",
     "test": "test"
   },
   "files": [
