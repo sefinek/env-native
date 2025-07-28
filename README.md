@@ -47,7 +47,7 @@ yarn add env-native
 |------------------|----------|----------------------------|--------------------------------|
 | env-native (ESM) | ~ 14 KB  | 0.79, 0.78, 0.78, 0.76     | 2.55, 2.97, 2.74, 2.51         |
 | dotenv (CJS)     | ~ 79 KB  | 7.71, 8.06, 8.1, 8.61      | 37.40, 40.96, 37.91, 35.93     |
-| dotenvx (CJS)    | ~ 293 KB | 91.82, 97.76, 96.76, 99.50 | 252.89, 248.65, 249.39, 269.03 |
+| dotenvx (CJS)    | ~ 293 KB | 91.82, 97.76, 96.76, 99.50 | 286.74, 270.07, 269.07, 278.70 |
 
 `env-native` is fast, clean, and native — with no logs, no overhead, and up to **90× faster** than `dotenvx` on weaker systems.
 `dotenvx` is maintained by the same author as `dotenv`.
