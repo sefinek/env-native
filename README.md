@@ -1,8 +1,7 @@
 # 📄 env-native
-Minimalistic, zero-dependency `.env` loader powered by Node.js's native [util.parseEnv](https://nodejs.org/api/util.html#utilparseenvcontent).
+Minimalistic, zero-dependency `.env` loader using Node.js's native [util.parseEnv](https://nodejs.org/api/util.html#utilparseenvcontent).
 Significantly faster and smaller than `dotenv` and `dotenvx`.
-Designed for performance-critical, production-grade use cases in demanding environments.
-If you like this module, please star [the repository on GitHub](https://github.com/sefinek/env-native). Thank you!
+If you like this module, please star [the repository on GitHub](https://github.com/sefinek/env-native). Thanks for your support!
 
 <p align="center">
   <a href="https://www.npmjs.com/package/env-native"><img src="https://img.shields.io/npm/v/env-native?color=blue&label=npm" alt="npm version"></a>
@@ -14,9 +13,26 @@ If you like this module, please star [the repository on GitHub](https://github.c
 </p>
 
 
+
+## ⚠️ Good to know
+Since `v20.12.0`, Node.js includes built-in [`process.loadEnvFile`](https://nodejs.org/api/process.html#processloadenvfilepath) and [`util.parseEnv`](https://nodejs.org/api/util.html#utilparseenvcontent).  
+If you don't need env-native's CLI, stick with the built-in Node.js functions.
+
+### Example with `loadEnvFile` (recommended):
+```js
+process.loadEnvFile(); // It will immediately load your .env file into process.env
+```
+
+### Example with `parseEnv`:
+```js
+const { parseEnv } = require('node:util');
+parseEnv('HELLO=keyboard cat');// Returns: { HELLO: 'keyboard cat' }
+```
+
+
 ## 🚀 Features
 - Zero dependencies
-- Fast and lightweight (just 14 KB)
+- Fast and lightweight (~14 KB)
 - Uses built-in `util.parseEnv`
 - Simple API: `config(options)` or `parse(content, options)`
 - Supports custom file paths and variable overrides
@@ -49,7 +65,7 @@ yarn add env-native
 | dotenv (CJS)     | ~ 79 KB  | 7.71, 8.06, 8.1, 8.61      | 37.40, 40.96, 37.91, 35.93     |
 | dotenvx (CJS)    | ~ 293 KB | 91.82, 97.76, 96.76, 99.50 | 286.74, 270.07, 269.07, 278.70 |
 
-`env-native` is fast, clean, and native — with no logs, no overhead, and up to **90× faster** than `dotenvx` on weaker systems.
+`env-native` is fast, clean, and native — with no logs, no overhead, and up to **90× faster** than `dotenvx` on low-end systems.
 `dotenvx` is maintained by the same author as `dotenv`.
 
 ### Test Environment
@@ -72,7 +88,9 @@ HELLO_WORLD="Keyboard cat! https://youtu.be/J---aiyznGQ"
 
 **process.js**
 ```js
-require('env-native').config();
+import { config } from 'env-native';
+config(); // require('env-native').config(); for CJS
+
 console.log(process.env.HELLO_WORLD); // Keyboard cat! https://youtu.be/J---aiyznGQ
 ```
 
@@ -108,9 +126,8 @@ Parses raw `.env` file content using the native `util.parseEnv`. Does **not** in
 | `freeze` | `boolean` | `true`  | Freeze returned object (immutable)                                      |
 
 #### Returns
-```ts
-Record<string, string | number | boolean>
-```
+`Record<string, string | number | boolean>`
+
 
 #### Example
 ```js
